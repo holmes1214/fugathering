@@ -21,7 +21,7 @@ import java.util.Set;
 
 /**
  */
-@Service("handler_1000-1")
+@Service("handler_1002-1")
 public class H1002V1CreateToken implements Handler {
 
 
