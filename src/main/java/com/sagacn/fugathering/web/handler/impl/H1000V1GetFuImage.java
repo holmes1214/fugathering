@@ -73,7 +73,7 @@ public class H1000V1GetFuImage implements Handler {
 		if (redis.hexists(key,token)){
 			return redis.hget(key,token);
 		}
-		String url="http://evtape.cn/image/"+token+".png";
+		String url="http://evtape.cn/qrimage/"+token+".png";
 		createQRPicture(token,url);
 		redis.hset(key,token,url);
 		return url;

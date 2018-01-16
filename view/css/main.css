@@ -1,7 +1,7 @@
 body{
     height: 1920px;
     width: 1080px;
-    background: url("../image/bankground.jpg") no-repeat;
+    background: url("../image/background.jpg") no-repeat;
 }
 
 .qr-code{
