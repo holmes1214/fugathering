@@ -2,6 +2,7 @@ body{
     height: 1920px;
     width: 1080px;
     background: url("../image/background.jpg") no-repeat;
+    margin: 0px;
 }
 
 .qr-code{

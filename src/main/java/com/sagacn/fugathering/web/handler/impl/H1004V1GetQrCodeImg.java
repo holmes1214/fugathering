@@ -46,14 +46,15 @@ public class H1004V1GetQrCodeImg implements Handler {
             return redis.hget(key, token);
         }
         String url = "http://evtape.cn/qrimage/" + token + ".png";
-        createQRPicture(token, url);
+        createQRPicture(token);
         redis.hset(key, token, url);
         return url;
     }
 
-    private void createQRPicture(String token, String url) {
-        File image = new File("/down/uservideo1/" + token + ".png");
+    private void createQRPicture(String token) {
+        File image = new File("/down/qrcode/" + token + ".png");
         try {
+            String url="http://evtape.cn/reward.html?token="+token;
             JsonUtil.drawLogoQRCode(image, url, null);
         } catch (Exception e) {
             logger.error("create qr code error: ", e);
