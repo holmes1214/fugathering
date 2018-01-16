@@ -10,6 +10,7 @@ body{
     top:720px;
     height: 500px;
     width: 500px;
+    z-index: 10;
 }
 
 .char-x{
@@ -19,22 +20,28 @@ body{
     top:429px;
     height: 118px;
     width: 500px;
+    z-index: 10;
 }
 
 .char-x-1{
     background: url("../image/1x.png");
+    z-index: 10;
 }
 .char-x-2{
     background: url("../image/2x.png");
+    z-index: 10;
 }
 .char-x-3{
     background: url("../image/3x.png");
+    z-index: 10;
 }
 .char-x-4{
     background: url("../image/4x.png");
+    z-index: 10;
 }
 .char-x-5{
     background: url("../image/5x.png");
+    z-index: 10;
 }
 
 .char-1{
@@ -45,6 +52,7 @@ body{
     height: 108px;
     width: 108px;
     background: url("../image/1.png");
+    z-index: 10;
 }
 .char-2{
     position: absolute;
@@ -54,6 +62,7 @@ body{
     height: 108px;
     width: 108px;
     background: url("../image/2x.png");
+    z-index: 10;
 }
 .char-3{
     position: absolute;
@@ -63,6 +72,7 @@ body{
     height: 108px;
     width: 108px;
     background: url("../image/3x.png");
+    z-index: 10;
 }
 .char-4{
     position: absolute;
@@ -72,6 +82,7 @@ body{
     height: 108px;
     width: 108px;
     background: url("../image/4x.png");
+    z-index: 10;
 }
 .char-5{
     position: absolute;
@@ -81,4 +92,5 @@ body{
     height: 108px;
     width: 108px;
     background: url("../image/5x.png");
+    z-index: 10;
 }
