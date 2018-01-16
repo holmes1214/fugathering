@@ -39,7 +39,7 @@ $(document).ready(function () {
                         setTimeout(getQrCodeImg,2000);
                     }
                 }
-                if(data.entity.luckyDraw){
+                if(data.entity.luckyDraw>=0){
                     var luckyDraw=data.entity.luckyDraw;
                     $(".char-x-"+luckyDraw).show();
                     if(luckyDraw==0){
