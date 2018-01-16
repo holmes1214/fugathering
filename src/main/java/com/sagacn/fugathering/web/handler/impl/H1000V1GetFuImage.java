@@ -43,7 +43,7 @@ public class H1000V1GetFuImage implements Handler {
 		}
 		String qrNumber = clientRequest.getParameter("qrNumber");
 		String qrKey= CacheKeyConstant.QR_DRAWN_PREFIX+token;
-		if (redis.sismember(qrKey,qrNumber)){
+		if (redis.exists(qrKey)&&redis.sismember(qrKey,qrNumber)){
 			throw new BaseException(ErrorCode.DUPLICATED_QR_CODE);
 		}
 		Map<String,Object> result=new HashMap<>();
