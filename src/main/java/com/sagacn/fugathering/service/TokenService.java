@@ -16,9 +16,6 @@ import java.util.*;
 @Service
 public class TokenService {
 
-    @Value("${fu.picture.count}")
-    private int picCount;
-
     public String createToken() {
         String token = UUID.randomUUID().toString();
         return token;
