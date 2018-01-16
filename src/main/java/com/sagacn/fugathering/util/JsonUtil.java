@@ -26,8 +26,8 @@ public class JsonUtil {
     private static final int QRCOLOR = 0xee1d23; // 默认是黑色
     private static final int BGWHITE = 0xffffff; // 背景颜色
 
-    private static final int WIDTH = 414; // 二维码宽
-    private static final int HEIGHT = 414; // 二维码高
+    private static final int WIDTH = 416; // 二维码宽
+    private static final int HEIGHT = 416; // 二维码高
 
     public static String toJson(Object data) {
         return JSON.toJSONString(data);
@@ -37,7 +37,7 @@ public class JsonUtil {
         return JSON.parseObject(jsonSource, type);
     }
 
-    private static String logoFilePath="/down/uservideo0/logo.png";
+    private static String logoFilePath="/down/uservideo1/logo.png";
     public static void drawLogoQRCode(File codeFile, String qrUrl, String note) throws IOException, WriterException {
         MultiFormatWriter multiFormatWriter = new MultiFormatWriter();
         Map<EncodeHintType, Object> hints = new HashMap<>();

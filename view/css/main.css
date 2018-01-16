@@ -6,10 +6,10 @@ body{
 
 .qr-code{
     position: absolute;
-    left:294px;
-    top:720px;
-    height: 500px;
-    width: 500px;
+    left:332px;
+    top:767px;
+    height: 416px;
+    width: 416px;
     z-index: 10;
 }
 
@@ -61,7 +61,7 @@ body{
     top:67px;
     height: 108px;
     width: 108px;
-    background: url("../image/2x.png");
+    background: url("../image/2.png");
     z-index: 10;
 }
 .char-3{
@@ -71,7 +71,7 @@ body{
     top:67px;
     height: 108px;
     width: 108px;
-    background: url("../image/3x.png");
+    background: url("../image/3.png");
     z-index: 10;
 }
 .char-4{
@@ -81,7 +81,7 @@ body{
     top:67px;
     height: 108px;
     width: 108px;
-    background: url("../image/4x.png");
+    background: url("../image/4.png");
     z-index: 10;
 }
 .char-5{
@@ -91,6 +91,6 @@ body{
     top:67px;
     height: 108px;
     width: 108px;
-    background: url("../image/5x.png");
+    background: url("../image/5.png");
     z-index: 10;
 }
