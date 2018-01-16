@@ -11,4 +11,5 @@ public interface CacheKeyConstant {
     String FU_SET_TOTAL = "fu.gathering.total";
     String QR_DRAWN_PREFIX = "fu.gathering.qr.";
     String DRAWN_TIME_MAP_KEY = "fu.gathering.drawn.time" ;
+    String VAIN_MAP_KEY="fu.gathering.vain";
 }

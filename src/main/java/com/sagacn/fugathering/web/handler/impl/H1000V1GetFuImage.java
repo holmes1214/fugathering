@@ -31,72 +31,51 @@ import java.util.Set;
 public class H1000V1GetFuImage implements Handler {
 
 
-	private Logger logger = LoggerFactory.getLogger(H1000V1GetFuImage.class);
-	@Autowired
-	private RedisService redis;
+    private Logger logger = LoggerFactory.getLogger(H1000V1GetFuImage.class);
+    @Autowired
+    private RedisService redis;
 
-	@Override
-	public Object process(ClientRequest clientRequest) throws Exception {
-		String token = clientRequest.getToken();
-		if(StringUtils.isBlank(token)){
-			throw new BaseException(ErrorCode.INVALID_TOKEN);
-		}
-		String qrNumber = clientRequest.getParameter("qrNumber");
-		String qrKey= CacheKeyConstant.QR_DRAWN_PREFIX+token;
-		if (redis.exists(qrKey)&&redis.sismember(qrKey,qrNumber)){
-			throw new BaseException(ErrorCode.DUPLICATED_QR_CODE);
-		}
-		Map<String,Object> result=new HashMap<>();
-		int i = RandomUtils.nextInt(0, 100);
-		Set<String> pic = redis.smembers(CacheKeyConstant.FU_SET_PREFIX + token);
-		if (i==0){
-			result.put("luckyDraw",0);
-		}else {
-			redis.sadd(qrKey,qrNumber);
-			List<String> total = redis.lrange(CacheKeyConstant.FU_SET_TOTAL,0,-1);
-			total.removeAll(pic);
-			if (total.size()==0){
-				result.put("qrPic",getQrPic(token));
-			}else {
-				String index=total.get(RandomUtils.nextInt(0,total.size()));
-				result.put("luckyDraw",index);
-				redis.sadd(CacheKeyConstant.FU_SET_PREFIX + token,index);
-				pic.add(index);
-			}
-		}
-		result.put("fuLists",pic);
-		return result;
-	}
-
-	private String getQrPic(String token) {
-		String key=CacheKeyConstant.DRAWN_TIME_MAP_KEY;
-		if (redis.hexists(key,token)){
-			return redis.hget(key,token);
-		}
-		String url="http://evtape.cn/qrimage/"+token+".png";
-		createQRPicture(token,url);
-		redis.hset(key,token,url);
-		return url;
-	}
-
-	private void createQRPicture(String token,String url) {
-		File image=new File("/down/uservideo1/"+token+".png");
-		try {
-			JsonUtil.drawLogoQRCode(image,url,null);
-		} catch (Exception e) {
-			logger.error("create qr code error: ",e);
-			throw new BaseException(ErrorCode.QRCodeGenerateError);
-		}
-	}
+    @Override
+    public Object process(ClientRequest clientRequest) throws Exception {
+        String token = clientRequest.getToken();
+        if (StringUtils.isBlank(token)) {
+            throw new BaseException(ErrorCode.INVALID_TOKEN);
+        }
+        String qrNumber = clientRequest.getParameter("qrNumber");
+        String qrKey = CacheKeyConstant.QR_DRAWN_PREFIX + token;
+        if (redis.exists(qrKey) && redis.sismember(qrKey, qrNumber)) {
+            throw new BaseException(ErrorCode.DUPLICATED_QR_CODE);
+        }
+        Map<String, Object> result = new HashMap<>();
+        int i = 1;
+        if (redis.zscore(CacheKeyConstant.VAIN_MAP_KEY, token) > 1) {
+            i = RandomUtils.nextInt(0, 10);
+        }
+        Set<String> pic = redis.smembers(CacheKeyConstant.FU_SET_PREFIX + token);
+        List<String> total = redis.lrange(CacheKeyConstant.FU_SET_TOTAL, 0, -1);
+        redis.sadd(qrKey, qrNumber);
+        if (i == 0 || pic.size() >= 5) {
+            result.put("luckyDraw", 0);
+            redis.zincreby(CacheKeyConstant.VAIN_MAP_KEY, token, 1);
+        } else {
+            total.removeAll(pic);
+            String index = total.get(RandomUtils.nextInt(0, total.size()));
+            result.put("luckyDraw", index);
+            redis.sadd(CacheKeyConstant.FU_SET_PREFIX + token, index);
+            pic.add(index);
+        }
+        result.put("fuLists", pic);
+        return result;
+    }
 
 
-	@Override
-	public boolean checkToken() {
-		return true;
-	}
+    @Override
+    public boolean checkToken() {
+        return true;
+    }
 
-	@Override
-	public boolean validateData(ClientRequest clientRequest) {
-		return true;
-	}
+    @Override
+    public boolean validateData(ClientRequest clientRequest) {
+        return true;
+    }
 }
