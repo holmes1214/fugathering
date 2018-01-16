@@ -50,7 +50,7 @@ public class H1000V1GetFuImage implements Handler {
         int i = 1;
         Double vainCount = redis.zscore(CacheKeyConstant.VAIN_MAP_KEY, token);
         if (vainCount != null && vainCount > 1) {
-            i = RandomUtils.nextInt(0, 10);
+            i = RandomUtils.nextInt(0, 7);
         }
         Set<String> pic = redis.smembers(CacheKeyConstant.FU_SET_PREFIX + token);
         List<String> total = redis.lrange(CacheKeyConstant.FU_SET_TOTAL, 0, -1);

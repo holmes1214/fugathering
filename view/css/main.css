@@ -13,10 +13,20 @@ body{
     z-index: 10;
 }
 
+.qr-code-desc{
+    position: absolute;
+    left:393px;
+    top:1205px;
+    height: 416px;
+    width: 80px;
+    z-index: 10;
+    background: url("../image/qrdesc.png") no-repeat;
+}
+
 .char-x{
     position: absolute;
     display: none;
-    left:270px;
+    left:255px;
     top:294px;
     height: 300px;
     width: 570px;

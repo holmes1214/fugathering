@@ -1,7 +1,11 @@
 var path = "http://evtape.cn/qr/request";
 
 $(document).ready(function () {
-
+    $(".char").hide();
+    $(".char-x").hide();
+    $(".char-x-0").hide();
+    $(".qr-code").hide();
+    $(".qr-code-desc").hide();
     var token=getToken();
     if(!token){
         createToken();
@@ -25,11 +29,6 @@ $(document).ready(function () {
                 return ;
             }
             if (data.entity) {
-                $(".char").hide();
-                $(".char-x").hide();
-                $(".char-x-0").hide();
-                $(".qr-code").hide();
-                $(".qr-code-desc").hide();
                 if(data.entity.fuLists){
                     var list=data.entity.fuLists
                     for(var i=0;i<list.length;i++){
@@ -72,6 +71,7 @@ function getQrCodeImg() {
             }
             if (data.entity) {
                 var qrPic=data.entity;
+                $(".char-x").hide();
                 $(".qr-code").empty().append("<img src='"+qrPic+"'/>").show();
                 $(".qr-code-desc").show();
             }
