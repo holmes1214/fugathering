@@ -21,7 +21,7 @@ $(document).ready(function () {
         success: function (data) {
             console.debug(data);
             if(data.errorcode&&data.errorcode!='0'){
-                alert(data.entity)
+                alert(data.entity);
                 return ;
             }
             if (data.entity) {
