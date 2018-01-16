@@ -1,0 +1,36 @@
+body{
+    height: 1920px;
+    width: 1080px;
+    background: url("../image/background.jpg") no-repeat;
+    margin: 0px;
+}
+
+
+.reward-available{
+    position: absolute;
+    left:332px;
+    top:767px;
+    height: 416px;
+    width: 416px;
+    background: url("../image/fu.png");
+    z-index: 10;
+
+}
+.reward-sent{
+    position: absolute;
+    left:230px;
+    top:756px;
+    height: 367px;
+    width: 620px;
+    z-index: 10;
+    background: url("../image/0xdesc.png");
+    z-index: 10;
+}
+.reward-info{
+    position: absolute;
+    left:255px;
+    top:294px;
+    height: 300px;
+    width: 570px;
+    z-index: 10;
+}

@@ -7,6 +7,7 @@ $(document).ready(function () {
     $(".char-x-desc").hide();
     $(".qr-code").hide();
     $(".qr-code-desc").hide();
+    $(".qr-code-rescan").hide();
     var token=getToken();
     if(!token){
         createToken();
@@ -45,6 +46,8 @@ $(document).ready(function () {
                     if(luckyDraw==0){
                         $(".char-fu-center").hide();
                         $(".char-x-desc").show();
+                    }else if(luckyDraw==-1){
+                        $(".qr-code-rescan").show();
                     }
                 }
             }

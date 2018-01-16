@@ -29,7 +29,7 @@ public enum ErrorCode {
     FILE_TRANSFORM_ERROR("100012", "文件转换错误"),
     DUPLICATED_QR_CODE("100013", "二维码已经扫过"),
     TRY_AGAIN("100014", "请再接再厉"),
-    NOD_ADMIN("100015", "请联系工作人员领取奖品"),
+    NOT_ADMIN("100015", "请联系工作人员领取奖品"),
     REWARD_HAS_SENT("100016","奖品已领取过" );
 
     public String value;

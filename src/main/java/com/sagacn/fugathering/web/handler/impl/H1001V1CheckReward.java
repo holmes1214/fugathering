@@ -33,7 +33,7 @@ public class H1001V1CheckReward implements Handler {
 		String token = clientRequest.getToken();
 		String userToken = clientRequest.getParameter("userToken");
 		if (token!=null&&token.equals(userToken)){
-			throw new BaseException(ErrorCode.NOD_ADMIN);
+			throw new BaseException(ErrorCode.NOT_ADMIN);
 		}
 		if (userToken==null){
 			throw new BaseException(ErrorCode.INVALID_TOKEN);

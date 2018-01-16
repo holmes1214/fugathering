@@ -24,6 +24,16 @@ body{
     background: url("../image/qrdesc.png") no-repeat;
 }
 
+.qr-code-rescan{
+    position: absolute;
+    left:45px;
+    top:294px;
+    height: 185px;
+    width: 890px;
+    z-index: 20;
+    background: url("../image/scanned.png") no-repeat;
+}
+
 .char-x{
     position: absolute;
     left:255px;

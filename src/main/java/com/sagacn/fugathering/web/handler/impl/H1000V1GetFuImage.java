@@ -43,16 +43,19 @@ public class H1000V1GetFuImage implements Handler {
         }
         String qrNumber = clientRequest.getParameter("qrNumber");
         String qrKey = CacheKeyConstant.QR_DRAWN_PREFIX + token;
-        if (redis.exists(qrKey) && redis.sismember(qrKey, qrNumber)) {
-            throw new BaseException(ErrorCode.DUPLICATED_QR_CODE);
-        }
         Map<String, Object> result = new HashMap<>();
+        Set<String> pic = redis.smembers(CacheKeyConstant.FU_SET_PREFIX + token);
+        if (redis.exists(qrKey) && redis.sismember(qrKey, qrNumber)) {
+            result.put("fuLists", pic);
+            result.put("luckDraw", -1);
+            return result;
+        }
         int i = 1;
         Double vainCount = redis.zscore(CacheKeyConstant.VAIN_MAP_KEY, token);
         if (vainCount != null && vainCount <3) {
-            i = RandomUtils.nextInt(0, 7);
+            i = RandomUtils.nextInt(0, 6);
+            logger.info("random number : {}",i);
         }
-        Set<String> pic = redis.smembers(CacheKeyConstant.FU_SET_PREFIX + token);
         List<String> total = redis.lrange(CacheKeyConstant.FU_SET_TOTAL, 0, -1);
         redis.sadd(qrKey, qrNumber);
         if (i == 0 || pic.size() >= 5) {

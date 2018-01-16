@@ -54,7 +54,7 @@ public class H1004V1GetQrCodeImg implements Handler {
     private void createQRPicture(String token) {
         File image = new File("/down/qrcode/" + token + ".png");
         try {
-            String url="http://evtape.cn/reward.html?token="+token;
+            String url="http://evtape.cn/reward.html?userToken="+token;
             JsonUtil.drawLogoQRCode(image, url, null);
         } catch (Exception e) {
             logger.error("create qr code error: ", e);
