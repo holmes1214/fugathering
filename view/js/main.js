@@ -72,7 +72,7 @@ function getQrCodeImg() {
             }
             if (data.entity) {
                 var qrPic=data.entity;
-                // $(".char-x").hide();
+                $(".char-x-desc").hide();
                 $(".qr-code").empty().append("<img src='"+qrPic+"'/>").show();
                 $(".qr-code-desc").show();
             }
