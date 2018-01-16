@@ -28,11 +28,6 @@ public class H1001V1CheckReward implements Handler {
 	@Autowired
 	private RedisService redis;
 
-	@Value("${fu.picture.count}")
-	private int picCount;
-	@Value("${fu.picture.qrCount}")
-	private int qrCount;
-
 	@Override
 	public Object process(ClientRequest clientRequest) throws Exception {
 		String token = clientRequest.getToken();
@@ -48,11 +43,6 @@ public class H1001V1CheckReward implements Handler {
 		}
 		redis.hset(CacheKeyConstant.DRAWN_TIME_MAP_KEY,userToken, System.currentTimeMillis()+"");
 		return null;
-	}
-
-
-	private void createQRPicture(String url) {
-
 	}
 
 

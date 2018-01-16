@@ -28,11 +28,6 @@ public class H1002V1CreateToken implements Handler {
 	@Autowired
 	private TokenService service;
 
-	@Value("${fu.picture.count}")
-	private int picCount;
-	@Value("${fu.picture.qrCount}")
-	private int qrCount;
-
 	@Override
 	public Object process(ClientRequest clientRequest) throws Exception {
 		return service.createToken();

@@ -35,11 +35,6 @@ public class H1000V1GetFuImage implements Handler {
 	@Autowired
 	private RedisService redis;
 
-	@Value("${fu.picture.count}")
-	private int picCount;
-	@Value("${fu.picture.qrCount}")
-	private int qrCount;
-
 	@Override
 	public Object process(ClientRequest clientRequest) throws Exception {
 		String token = clientRequest.getToken();

@@ -18,8 +18,6 @@ public class TokenService {
 
     @Value("${fu.picture.count}")
     private int picCount;
-    @Autowired
-    private RedisService redis;
 
     public String createToken() {
         String token = UUID.randomUUID().toString();
