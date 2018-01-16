@@ -4,6 +4,7 @@ $(document).ready(function () {
     $(".char").hide();
     $(".char-x").hide();
     $(".char-x-0").hide();
+    $(".char-x-desc").hide();
     $(".qr-code").hide();
     $(".qr-code-desc").hide();
     var token=getToken();
