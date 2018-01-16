@@ -40,10 +40,10 @@ $(document).ready(function () {
                 }
                 if(data.entity.luckyDraw){
                     var luckyDraw=data.entity.luckyDraw;
+                    $(".char-x-"+luckyDraw).show();
                     if(luckyDraw==0){
-                        $(".char-x-0").show();
-                    }else {
-                        $(".char-x-"+luckyDraw).show();
+                        $(".char-fu-center").hide();
+                        $(".char-x-desc").show();
                     }
                 }
             }
@@ -71,7 +71,7 @@ function getQrCodeImg() {
             }
             if (data.entity) {
                 var qrPic=data.entity;
-                $(".char-x").hide();
+                // $(".char-x").hide();
                 $(".qr-code").empty().append("<img src='"+qrPic+"'/>").show();
                 $(".qr-code-desc").show();
             }

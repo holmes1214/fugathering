@@ -17,15 +17,14 @@ body{
     position: absolute;
     left:393px;
     top:1205px;
-    height: 416px;
-    width: 80px;
+    height: 80px;
+    width: 294px;
     z-index: 10;
     background: url("../image/qrdesc.png") no-repeat;
 }
 
 .char-x{
     position: absolute;
-    display: none;
     left:255px;
     top:294px;
     height: 300px;
@@ -33,6 +32,31 @@ body{
     z-index: 10;
 }
 
+.char-fu-center{
+    position: absolute;
+    left:332px;
+    top:767px;
+    height: 416px;
+    width: 416px;
+    background: url("../image/fu.png");
+    z-index: 10;
+
+}
+.char-x-desc{
+    position: absolute;
+    left:230px;
+    top:756px;
+    height: 367px;
+    width: 620px;
+    z-index: 10;
+    background: url("../image/0x.png");
+    z-index: 10;
+}
+
+.char-x-0{
+    background: url("../image/0x.png");
+    z-index: 10;
+}
 .char-x-1{
     background: url("../image/1x.png");
     z-index: 10;
