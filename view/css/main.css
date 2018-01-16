@@ -16,10 +16,10 @@ body{
 .char-x{
     position: absolute;
     display: none;
-    left:294px;
-    top:429px;
-    height: 118px;
-    width: 500px;
+    left:270px;
+    top:294px;
+    height: 300px;
+    width: 570px;
     z-index: 10;
 }
 

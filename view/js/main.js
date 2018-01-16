@@ -45,7 +45,7 @@ $(document).ready(function () {
                     if(luckyDraw==0){
                         $(".char-x-0").show();
                     }else {
-                        $(".char-x-"+list[i]).show();
+                        $(".char-x-"+luckyDraw).show();
                     }
                 }
             }

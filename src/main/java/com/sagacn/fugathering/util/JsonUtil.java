@@ -23,11 +23,11 @@ import java.util.Objects;
  */
 public class JsonUtil {
 
-    private static final int QRCOLOR = 0xFF9d1a21; // 默认是黑色
-    private static final int BGWHITE = 0xf2e3bc; // 背景颜色
+    private static final int QRCOLOR = 0xee1d23; // 默认是黑色
+    private static final int BGWHITE = 0xffffff; // 背景颜色
 
-    private static final int WIDTH = 500; // 二维码宽
-    private static final int HEIGHT = 500; // 二维码高
+    private static final int WIDTH = 414; // 二维码宽
+    private static final int HEIGHT = 414; // 二维码高
 
     public static String toJson(Object data) {
         return JSON.toJSONString(data);
