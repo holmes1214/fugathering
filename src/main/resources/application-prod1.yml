@@ -1,0 +1,18 @@
+server:
+  port: 8090
+# 日志设定
+logging:
+  level:
+    com.sagacn: INFO
+  config: classpath:logback-prod.xml
+  
+aliyun:
+  redis:
+    host: 127.0.0.1
+    password: abc123
+    port: 55555
+    max-idle: 50
+    min-idle: 30
+    max-active: 100
+    max-wait: 100
+    timeout: 1000

@@ -1,0 +1,84 @@
+body{
+    height: 1920px;
+    width: 1080px;
+    background: url("../image/bankground.jpg") no-repeat;
+}
+
+.qr-code{
+    position: absolute;
+    left:294px;
+    top:720px;
+    height: 500px;
+    width: 500px;
+}
+
+.char-x{
+    position: absolute;
+    display: none;
+    left:294px;
+    top:429px;
+    height: 118px;
+    width: 500px;
+}
+
+.char-x-1{
+    background: url("../image/1x.png");
+}
+.char-x-2{
+    background: url("../image/2x.png");
+}
+.char-x-3{
+    background: url("../image/3x.png");
+}
+.char-x-4{
+    background: url("../image/4x.png");
+}
+.char-x-5{
+    background: url("../image/5x.png");
+}
+
+.char-1{
+    position: absolute;
+    display: none;
+    left:81px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/1.png");
+}
+.char-2{
+    position: absolute;
+    display: none;
+    left:286px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/2x.png");
+}
+.char-3{
+    position: absolute;
+    display: none;
+    left:491px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/3x.png");
+}
+.char-4{
+    position: absolute;
+    display: none;
+    left:696px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/4x.png");
+}
+.char-5{
+    position: absolute;
+    display: none;
+    left:901px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/5x.png");
+}
