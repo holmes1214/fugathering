@@ -47,7 +47,7 @@ public class H1000V1GetFuImage implements Handler {
         Set<String> pic = redis.smembers(CacheKeyConstant.FU_SET_PREFIX + token);
         if (redis.exists(qrKey) && redis.sismember(qrKey, qrNumber)) {
             result.put("fuLists", pic);
-            result.put("luckDraw", -1);
+            result.put("luckyDraw", -1);
             return result;
         }
         int i = 1;
