@@ -99,7 +99,7 @@ function createToken() {
     $.ajax({
         type: "POST",
         url: path,
-        async: false;
+        async: false,
         data: {body: JSON.stringify(body)},
         dataType: "json",
         success: function (data) {
