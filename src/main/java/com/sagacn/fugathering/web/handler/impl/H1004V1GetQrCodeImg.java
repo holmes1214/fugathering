@@ -41,7 +41,7 @@ public class H1004V1GetQrCodeImg implements Handler {
     }
 
     private String getQrPic(String token) {
-        String key = CacheKeyConstant.DRAWN_TIME_MAP_KEY;
+        String key = CacheKeyConstant.QR_GENERATE_KEY;
         if (redis.hexists(key, token)) {
             return redis.hget(key, token);
         }

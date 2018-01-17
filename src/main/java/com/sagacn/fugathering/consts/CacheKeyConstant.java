@@ -12,4 +12,6 @@ public interface CacheKeyConstant {
     String QR_DRAWN_PREFIX = "fu.gathering.qr.";
     String DRAWN_TIME_MAP_KEY = "fu.gathering.drawn.time" ;
     String VAIN_MAP_KEY="fu.gathering.vain";
+
+    String QR_GENERATE_KEY = "fu.gathering.qr.generate";
 }
