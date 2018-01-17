@@ -52,7 +52,7 @@ public class H1000V1GetFuImage implements Handler {
         }
         int i = 1;
         Double vainCount = redis.zscore(CacheKeyConstant.VAIN_MAP_KEY, token);
-        if (vainCount != null && vainCount <3) {
+        if (vainCount == null || vainCount <3) {
             i = RandomUtils.nextInt(0, 6);
             logger.info("random number : {}",i);
         }
