@@ -46,9 +46,9 @@ $(document).ready(function () {
                     if(luckyDraw==0){
                         $(".char-fu-center").hide();
                         $(".char-x-desc").show();
-                    }else if(luckyDraw==-1){
-                        $(".qr-code-rescan").show();
                     }
+                }else if(luckyDraw==-1){
+                    $(".qr-code-rescan").show();
                 }
             }
         }
