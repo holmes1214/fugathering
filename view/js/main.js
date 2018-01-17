@@ -47,7 +47,7 @@ $(document).ready(function () {
                         $(".char-fu-center").hide();
                         $(".char-x-desc").show();
                     }
-                }else if(luckyDraw==-1){
+                }else if(data.entity.luckyDraw==-1){
                     $(".qr-code-rescan").show();
                 }
             }
