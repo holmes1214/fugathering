@@ -23,10 +23,10 @@ $(document).ready(function () {
         success: function (data) {
             console.debug(data);
             if(data.errorcode&&data.errorcode!='0'){
-                $(".reward-info").text(data.entity).show();
-                $(".reward-sent").show();
+                $(".reward-info").empty().append("<img src='/image/"+data.errorcode+".png' />").show();
                 return ;
             }
+            $(".reward-info").empty().append("<img src='/image/congrat.png' />").show();
             $(".reward-available").show();
         }
     });
@@ -54,7 +54,7 @@ function createToken() {
         success: function (data) {
             console.debug(data);
             if(data.errorcode&&data.errorcode!='0'){
-                alert(data.entity)
+                console.log(data.entity);
                 return ;
             }
             localStorage.setItem(path+"token",data.entity);

@@ -28,9 +28,9 @@ body{
 }
 .reward-info{
     position: absolute;
-    left:255px;
+    left:282px;
     top:294px;
-    height: 300px;
-    width: 570px;
-    z-index: 10;
+    height: 170px;
+    width: 515px;
+    z-index: 20;
 }
