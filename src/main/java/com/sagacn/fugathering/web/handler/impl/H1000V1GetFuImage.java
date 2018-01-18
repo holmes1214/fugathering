@@ -53,12 +53,12 @@ public class H1000V1GetFuImage implements Handler {
         int i = 1;
         Double vainCount = redis.zscore(CacheKeyConstant.VAIN_MAP_KEY, token);
         if (vainCount == null || vainCount <3) {
-            i = RandomUtils.nextInt(-1, 5);
+            i = RandomUtils.nextInt(1, 7);
             logger.info("random number : {}",i);
         }
         List<String> total = redis.lrange(CacheKeyConstant.FU_SET_TOTAL, 0, -1);
         redis.sadd(qrKey, qrNumber);
-        if (i == 0 || pic.size() >= 5) {
+        if (i == 5 || pic.size() >= 5) {
             result.put("luckyDraw", 0);
             redis.zincreby(CacheKeyConstant.VAIN_MAP_KEY, token, 1);
         } else {
