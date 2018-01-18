@@ -27,7 +27,7 @@ $(document).ready(function () {
         success: function (data) {
             console.debug(data);
             if(data.errorcode&&data.errorcode!='0'){
-                alert(data.entity);
+                console.log(data.entity);
                 return ;
             }
             if (data.entity) {
@@ -70,7 +70,7 @@ function getQrCodeImg() {
         success: function (data) {
             console.debug(data);
             if(data.errorcode&&data.errorcode!='0'){
-                alert(data.entity)
+                console.log(data.entity)
                 return ;
             }
             if (data.entity) {
@@ -105,7 +105,7 @@ function createToken() {
         success: function (data) {
             console.debug(data);
             if(data.errorcode&&data.errorcode!='0'){
-                alert(data.entity)
+                console.log(data.entity);
                 return ;
             }
             localStorage.setItem(path+"token",data.entity);
