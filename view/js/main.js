@@ -10,10 +10,6 @@ function is_weixin(){
 }
 
 $(document).ready(function () {
-    if(!is_weixin()){
-        $('body').css("background","");
-        return ;
-    }
     $(".char").hide();
     $(".char-x").hide();
     $(".char-x-0").hide();
@@ -21,6 +17,10 @@ $(document).ready(function () {
     $(".qr-code").hide();
     $(".qr-code-desc").hide();
     $(".qr-code-rescan").hide();
+    if(!is_weixin()){
+        $('body').css("background","");
+        return ;
+    }
     var token=getToken();
     if(!token){
         createToken();
