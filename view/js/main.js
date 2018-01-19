@@ -1,6 +1,19 @@
 var path = "http://evtape.cn/qr/request";
 
+function is_weixin(){
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 $(document).ready(function () {
+    if(!is_weixin()){
+        $('body').css("background","");
+        return ;
+    }
     $(".char").hide();
     $(".char-x").hide();
     $(".char-x-0").hide();
