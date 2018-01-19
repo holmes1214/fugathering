@@ -34,3 +34,49 @@ body{
     width: 515px;
     z-index: 20;
 }
+
+.char-1{
+    position: absolute;
+    left:81px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/1.png");
+    z-index: 10;
+}
+.char-2{
+    position: absolute;
+    left:286px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/2.png");
+    z-index: 10;
+}
+.char-3{
+    position: absolute;
+    left:491px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/3.png");
+    z-index: 10;
+}
+.char-4{
+    position: absolute;
+    left:696px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/4.png");
+    z-index: 10;
+}
+.char-5{
+    position: absolute;
+    left:901px;
+    top:67px;
+    height: 108px;
+    width: 108px;
+    background: url("../image/5.png");
+    z-index: 10;
+}
